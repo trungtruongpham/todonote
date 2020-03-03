@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Details Note";
+}
+<h1>@ViewData["Title"]</h1>
+@model todonote.Models.Note
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>
+        @Html.DisplayNameFor(model => model.ID)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Content)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Author)
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>@Model.ID</td>
+      <td>@Model.Content</td>
+      <td>@Model.Author</td>
+    </tr>
+  </tbody>
+</table>

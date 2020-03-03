@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Update Note";
+}
+<h1>@ViewData["Title"]</h1>
+@model todonote.Models.Note
+
+<form method="POST">
+   <div class="form-group">
+    <label for="exampleInputEmail1">ID</label>
+    <input type="number" class="form-control" id="exampleInputEmail1" name="content" value="@Model.ID">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Content</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="content" value="@Model.Content">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your note with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Author</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="author" value="@Model.Author">
+  </div>
+  <button type="submit" class="btn btn-primary" >Update</button>
+  <button type="submit" class="btn btn-primary" formaction="/Home">Cancel</button>
+</form>
