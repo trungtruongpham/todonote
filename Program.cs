@@ -23,7 +23,7 @@ namespace todonote
         try
         {
             var context = services.GetRequiredService<NoteContext>();
-            DbInitializer.Initialize(context);
+            //DbInitializer.Initialize(context);
         }
         catch (Exception ex)
         {

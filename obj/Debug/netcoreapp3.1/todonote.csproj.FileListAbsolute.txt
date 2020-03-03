@@ -20,8 +20,6 @@ C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\todonot
 C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\todonote.TagHelpers.input.cache
 C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\todonote.TagHelpers.output.cache
 C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\todonote.RazorCoreGenerate.cache
-C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -33,8 +31,6 @@ C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\todonot
 C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\todonote.dll
 C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\todonote.pdb
 C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\todonote.csproj.CopyComplete
-C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\Razor\Views\Home\UpdateNote.cshtml.g.cs
-C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\Razor\Views\Home\AddNote.cshtml.g.cs
 C:\Users\Pham Trung Truong\source\repos\todonote\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Pham Trung Truong\source\repos\todonote\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\Pham Trung Truong\source\repos\todonote\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll

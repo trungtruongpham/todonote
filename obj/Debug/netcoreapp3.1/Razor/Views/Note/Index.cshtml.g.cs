@@ -26,8 +26,15 @@ using todonote.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\Pham Trung Truong\source\repos\todonote\Views\_ViewImports.cshtml"
+using todonote.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b1f816ac84f539277a6fc16e786087817e1ad5df", @"/Views/Note/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f6415098cdfcdefceb17e774d29c936cd942ce3c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"741eebb5cabdc3fe2868322cececce6a4a9d75d9", @"/Views/_ViewImports.cshtml")]
     public class Views_Note_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<todonote.Models.Note>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Create", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -68,7 +75,7 @@ using todonote.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h2>Index</h2>\r\n\r\n<p>\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1f816ac84f539277a6fc16e786087817e1ad5df4530", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1f816ac84f539277a6fc16e786087817e1ad5df4713", async() => {
                 WriteLiteral("Create New");
             }
             );
@@ -140,7 +147,7 @@ using todonote.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1f816ac84f539277a6fc16e786087817e1ad5df8014", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1f816ac84f539277a6fc16e786087817e1ad5df8197", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -171,7 +178,7 @@ using todonote.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" |\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1f816ac84f539277a6fc16e786087817e1ad5df10172", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1f816ac84f539277a6fc16e786087817e1ad5df10355", async() => {
                 WriteLiteral("Details");
             }
             );
@@ -202,7 +209,7 @@ using todonote.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" |\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1f816ac84f539277a6fc16e786087817e1ad5df12337", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1f816ac84f539277a6fc16e786087817e1ad5df12520", async() => {
                 WriteLiteral("Delete");
             }
             );

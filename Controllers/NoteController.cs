@@ -1,3 +1,4 @@
+using System.IO;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -6,11 +7,13 @@ using System.Linq;
 using System.Net.Http;
 using System.Security.Principal;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using todonote.Data;
 using todonote.Models;
+using todonote.ViewModels;
 
 namespace todonote.Controllers
 {
@@ -18,9 +21,12 @@ namespace todonote.Controllers
     {
         private readonly NoteContext _context;
         private INoteRepository _noteRepository;
-        public NoteController(INoteRepository noteRepository)
+        private readonly IWebHostEnvironment __webHostEnvironment;
+        public NoteController(INoteRepository noteRepository, IWebHostEnvironment webHostEnvironment, NoteContext context)
         {
-            _noteRepository = noteRepository;
+            this._context = context;
+            this._noteRepository = noteRepository;
+            this.__webHostEnvironment = webHostEnvironment;
         }
 
         public IActionResult Index()
@@ -28,34 +34,51 @@ namespace todonote.Controllers
             return View(_noteRepository.GetAllNote());
         }
 
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var noteModel = await _context.Notes
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var noteModel = _noteRepository.GetNote(id);
 
             if (noteModel == null)
             {
                 return NotFound();
             }
 
-            return View(noteModel);
+            NoteDetailsViewModel model = new NoteDetailsViewModel()
+            {
+                Content = noteModel.Content,
+                Author = noteModel.Author,
+                PhotoPath = noteModel.PhotoPath,
+            };
+
+            return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Content,Author")] Note newNote)
+        public IActionResult Create(NoteCreateViewModel model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
+                    string uniqueFileName = null;
+                    if (model.Photo != null)
+                    {
+                        string uploadsFolder = Path.Combine(__webHostEnvironment.WebRootPath, "images");
+                        uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Photo.FileName;
+                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                        model.Photo.CopyTo(new FileStream(filePath, FileMode.Create));
+                    }
+
+                    Note newNote = new Note()
+                    {
+                        Content = model.Content,
+                        Author = model.Author,
+                        PhotoPath = uniqueFileName,
+                    };
+
                     _noteRepository.Add(newNote);
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction("details", new {id = newNote.ID});
                 }
             }
             catch (DbUpdateException)
@@ -64,7 +87,7 @@ namespace todonote.Controllers
                     "Try again, and if the problem persists " +
                     "see your system administrator.");
             }
-            return View(newNote);
+            return View();
         }
         public IActionResult Create()
         {

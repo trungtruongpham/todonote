@@ -14,5 +14,7 @@ namespace todonote.Models {
         [Required]
        [StringLength(200, MinimumLength = 1)]
         public string Author { get; set; }
+
+        public string PhotoPath { get; set; }
     }
 }

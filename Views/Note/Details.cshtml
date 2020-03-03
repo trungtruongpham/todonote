@@ -1,29 +1,29 @@
+@model todonote.ViewModels.NoteDetailsViewModel
+
 @{
     ViewData["Title"] = "Details Note";
+    var photoPath = "~/images/"+ (Model.PhotoPath ?? "default.png");
 }
 <h1>@ViewData["Title"]</h1>
-@model todonote.Models.Note
 
 
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th>
-        @Html.DisplayNameFor(model => model.ID)
-      </th>
-      <th>
-        @Html.DisplayNameFor(model => model.Content)
-      </th>
-      <th>
-        @Html.DisplayNameFor(model => model.Author)
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>@Model.ID</td>
-      <td>@Model.Content</td>
-      <td>@Model.Author</td>
-    </tr>
-  </tbody>
-</table>
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h1>@Model.Author</h1>
+            </div>
+            <div class="card-body text-center">
+                <img class="card-img-top imageThumbnail" src="@photoPath" asp-append-version="true" />
+
+                <h4>Content : @Model.Content</h4>
+                <h4>Author : @Model.Author</h4>
+            </div>
+            <div class="card-footer text-center">
+                <a asp-controller="note" asp-action="index" class="btn btn-primary">Back</a>
+                <a href="#" class="btn btn-primary">Edit</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
