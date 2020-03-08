@@ -67,3 +67,4 @@ C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\Razor\V
 C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\Razor\Views\Note\Edit.cshtml.g.cs
 C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\Razor\Views\Note\Delete.cshtml.g.cs
 C:\Users\Pham Trung Truong\source\repos\todonote\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs

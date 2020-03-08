@@ -29,6 +29,19 @@ namespace todonote.Controllers
             this.__webHostEnvironment = webHostEnvironment;
         }
 
+
+        private string ProcessUploadedFile(NoteCreateViewModel model)
+        {
+            string uniqueFileName = null;
+            if (model.Photo != null)
+            {
+                string uploadsFolder = Path.Combine(__webHostEnvironment.WebRootPath, "images");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Photo.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                model.Photo.CopyTo(new FileStream(filePath, FileMode.Create));
+            }
+            return uniqueFileName;
+        }
         public IActionResult Index()
         {
             return View(_noteRepository.GetAllNote());
@@ -61,14 +74,7 @@ namespace todonote.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    string uniqueFileName = null;
-                    if (model.Photo != null)
-                    {
-                        string uploadsFolder = Path.Combine(__webHostEnvironment.WebRootPath, "images");
-                        uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Photo.FileName;
-                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                        model.Photo.CopyTo(new FileStream(filePath, FileMode.Create));
-                    }
+                    string uniqueFileName = ProcessUploadedFile(model);
 
                     Note newNote = new Note()
                     {
@@ -78,7 +84,7 @@ namespace todonote.Controllers
                     };
 
                     _noteRepository.Add(newNote);
-                    return RedirectToAction("details", new {id = newNote.ID});
+                    return RedirectToAction("details", new { id = newNote.ID });
                 }
             }
             catch (DbUpdateException)
@@ -96,38 +102,43 @@ namespace todonote.Controllers
 
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditPost(int? id)
+        public IActionResult EditPost(NoteEditViewModel model)
         {
-            if (id == null)
+            if (ModelState.IsValid)
             {
-                return NotFound();
-            }
+                string uniqueFileName = ProcessUploadedFile(model);
 
-            var noteToUpdate = await _context.Notes.FirstOrDefaultAsync(n => n.ID == id);
-            if (await TryUpdateModelAsync<Note>(
-                    noteToUpdate,
-                    "",
-                    n => n.Content, n => n.Author))
-            {
-                try
+                Note editNote = _noteRepository.GetNote(model.ID);
+                editNote.Content = model.Content;
+                editNote.Author = model.Author;
+
+                if (model.Photo != null)
                 {
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
+                    string filePath = Path.Combine(__webHostEnvironment.WebRootPath,
+                    "images", model.NewPhotoPath);
+                    System.IO.File.Delete(filePath);
                 }
-                catch (DbUpdateException)
-                {
-                    ModelState.AddModelError("", "Unable to save changes. " +
-                        "Try again, and if the problem persists, " +
-                        "see your system administrator.");
-                }
+
+                editNote.PhotoPath = ProcessUploadedFile(model);
+
+                Note note = _noteRepository.Update(editNote);
+                return RedirectToAction("index");
             }
-            return View(noteToUpdate);
+            return View();
         }
 
         [HttpGet]
-        public IActionResult Edit()
+        public IActionResult Edit(int id)
         {
-            return View();
+            Note editNote = _noteRepository.GetNote(id);
+            NoteEditViewModel model = new NoteEditViewModel()
+            {
+                ID = editNote.ID,
+                Content = editNote.Content,
+                Author = editNote.Author,
+                NewPhotoPath = editNote.PhotoPath,
+            };
+            return View(model);
         }
 
         public async Task<IActionResult> Delete(int? id, bool? saveChangeError = false)

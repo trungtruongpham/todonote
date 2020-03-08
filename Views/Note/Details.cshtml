@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Details Note";
-    var photoPath = "~/images/"+ (Model.PhotoPath ?? "default.png");
+    var photoPath = "~/images/"+ (Model.PhotoPath ?? "note1.png");
 }
 <h1>@ViewData["Title"]</h1>
 
@@ -21,8 +21,8 @@
             </div>
             <div class="card-footer text-center">
                 <a asp-controller="note" asp-action="index" class="btn btn-primary">Back</a>
-                <a href="#" class="btn btn-primary">Edit</a>
-                <a href="#" class="btn btn-danger">Delete</a>
+                <a asp-controller= "note" asp-action="edit"  class="btn btn-primary">Edit</a>
+                <a asp-controller="note" asp-action="delete"  class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>

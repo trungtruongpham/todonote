@@ -31,6 +31,8 @@ namespace todonote
             services.AddDbContext<NoteContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<INoteRepository, SQLNoteRepository>();
+            // services.AddIdentity<IdentityUser, IdentityRole>()
+            //     .AddEntityFrameworkStores<NoteContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,7 +50,7 @@ namespace todonote
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseAuthorization();

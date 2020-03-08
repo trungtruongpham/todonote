@@ -1,7 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\wwwroot",
+    "\\wwwroot\\lib",
+    "\\wwwroot\\lib\\bootstrap",
+    "\\wwwroot\\lib\\bootstrap\\dist",
+    "\\wwwroot\\lib\\bootstrap\\dist\\css",
+    "\\wwwroot\\lib\\bootstrap\\dist\\js",
+    "\\wwwroot\\lib\\jquery-validation"
   ],
-  "SelectedNode": "\\Migrations",
+  "SelectedNode": "\\wwwroot\\lib\\jquery-validation\\dist",
   "PreviewInSolutionExplorer": false
 }
