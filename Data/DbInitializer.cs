@@ -1,5 +1,4 @@
 using todonote.Models;
-using System;
 using System.Linq;
 
 namespace todonote.Data

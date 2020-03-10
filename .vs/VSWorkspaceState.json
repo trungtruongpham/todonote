@@ -9,6 +9,6 @@
     "\\wwwroot\\lib\\bootstrap\\dist\\js",
     "\\wwwroot\\lib\\jquery-validation"
   ],
-  "SelectedNode": "\\wwwroot\\lib\\jquery-validation\\dist",
+  "SelectedNode": "\\Startup.cs",
   "PreviewInSolutionExplorer": false
 }

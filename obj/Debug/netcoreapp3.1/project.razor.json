@@ -20526,6 +20526,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Pham Trung Truong\\source\\repos\\todonote\\Views\\Account\\Register.cshtml",
+      "TargetPath": "Views\\Account\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Pham Trung Truong\\source\\repos\\todonote\\Views\\Note\\Details.cshtml",
       "TargetPath": "Views\\Note\\Details.cshtml",
       "FileKind": "mvc"
