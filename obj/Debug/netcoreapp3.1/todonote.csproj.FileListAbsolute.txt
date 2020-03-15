@@ -154,3 +154,6 @@ C:\Users\Pham Trung Truong\source\repos\todonote\bin\Debug\netcoreapp3.1\zh-Hans
 C:\Users\Pham Trung Truong\source\repos\todonote\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\todonote.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\Razor\Views\Administration\AllRoles.cshtml.g.cs
+C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\Razor\Views\Administration\CreateRole.cshtml.g.cs
+C:\Users\Pham Trung Truong\source\repos\todonote\obj\Debug\netcoreapp3.1\Razor\Views\Administration\EditRole.cshtml.g.cs

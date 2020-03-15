@@ -7,6 +7,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using todonote.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Authorization;
+using todonote.Models;
 
 namespace todonote
 {
@@ -26,14 +29,20 @@ namespace todonote
             services.AddDbContext<NoteContext>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<INoteRepository, SQLNoteRepository>();
-            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
                 options.Password.RequiredLength = 10;
                 options.Password.RequiredUniqueChars = 3;
                 options.Password.RequireNonAlphanumeric = false;
             })
                 .AddEntityFrameworkStores<NoteContext>();
-
+            services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                        .RequireAuthenticatedUser()
+                        .Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,7 +69,7 @@ namespace todonote
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Note}/{action=Index}/{id?}");
+                    pattern: "{controller=account}/{action=login}/{id?}");
             });
         }
     }

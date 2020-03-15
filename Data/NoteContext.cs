@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace todonote.Data
 {
-    public class NoteContext : IdentityDbContext
+    public class NoteContext : IdentityDbContext<ApplicationUser>
     {
         public NoteContext(DbContextOptions<NoteContext> options) : base(options){
 

@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
+@inject SignInManager<ApplicationUser> SignInManager
 
     <!DOCTYPE html>
     <html lang="en">
@@ -26,7 +26,11 @@
                         <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Note"
-                                    asp-action="Index">List</a>
+                                    asp-action="Create">Create Note</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Administration"
+                                    asp-action="AllRoles">All Roles</a>
                             </li>
                         </ul>
                     </div>

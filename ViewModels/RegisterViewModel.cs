@@ -1,4 +1,6 @@
+using System;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace todonote.ViewModels
 {
@@ -6,6 +8,7 @@ namespace todonote.ViewModels
     {
         [Required]
         [EmailAddress]
+        [Remote(action : "IsEmailUsed", controller : "Account")]
         public string Email { get; set; }
 
         [Required]
@@ -16,5 +19,7 @@ namespace todonote.ViewModels
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "Password and confirmation password do not match")]
         public string ConfirmPassword { get; set; }
+
+        public string Location { get; set; }
     }
 }

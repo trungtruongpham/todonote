@@ -20521,6 +20521,11 @@
   "RootNamespace": "todonote",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\Pham Trung Truong\\source\\repos\\todonote\\Views\\Administration\\EditRole.cshtml",
+      "TargetPath": "Views\\Administration\\EditRole.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Pham Trung Truong\\source\\repos\\todonote\\Views\\Note\\Create.cshtml",
       "TargetPath": "Views\\Note\\Create.cshtml",
       "FileKind": "mvc"
@@ -20543,6 +20548,11 @@
     {
       "FilePath": "c:\\Users\\Pham Trung Truong\\source\\repos\\todonote\\Views\\Note\\Index.cshtml",
       "TargetPath": "Views\\Note\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Pham Trung Truong\\source\\repos\\todonote\\Views\\Administration\\AllRoles.cshtml",
+      "TargetPath": "Views\\Administration\\AllRoles.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20573,6 +20583,11 @@
     {
       "FilePath": "c:\\Users\\Pham Trung Truong\\source\\repos\\todonote\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Pham Trung Truong\\source\\repos\\todonote\\Views\\Administration\\CreateRole.cshtml",
+      "TargetPath": "Views\\Administration\\CreateRole.cshtml",
       "FileKind": "mvc"
     },
     {
